@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <form>
+    <div>
+      <label for="urls">Add a new URL</label>
+      <input type="text" id="addUrlTXT">
+      <button id="addUrl" type="button">Add</button>
+    </div>
+
+    <fieldset>
+      <legend>URL Options</legend>
+      <div>
+        <label for="urls">Select a URL</label>
+        <select id="urls"></select>
+        <button id="removeUrl" type="button">Remove</button>
+      </div>
+
+      <div>
+        <label style="vertical-align: top;" for="urlMacType">Select a MAC delimiter type</label>
+        <select id="urlMacType" size="3">
+          <option value="0">No delimiter</option>
+          <option value="1">"-" delimiter</option>
+          <option value="2">":" delimiter</option>
+        </select>
+      </div>
+    </fieldset>
+  </form>
+  <script src="options.js"></script>
+</body>
+
+</html>

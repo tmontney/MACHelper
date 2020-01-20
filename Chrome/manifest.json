@@ -1,0 +1,27 @@
+{
+
+  "manifest_version": 2,
+  "name": "MACHelper",
+  "version": "1.0",
+
+  "description": "Automatically formats MAC addresses correctly, when pasting into a field.",
+
+  "icons": {
+    "48": "icons/main.png"
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["machelper.js"]
+  }],
+
+  "options_ui": {
+    "page": "options.html"
+  },
+
+  "permissions": [
+	"storage",
+	"clipboardRead",
+	"clipboardWrite"
+  ]
+}
