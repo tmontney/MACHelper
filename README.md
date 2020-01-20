@@ -1,4 +1,4 @@
-Extension currently supports Google Chrome. To set up the extension, go to its options page.
+Extension currently supports Google Chrome and Mozilla Firefox. To set up the extension, go to its options page.
 
 1. Add a URL: e.g. github.com
 2. Set the MAC type: e.g. It only accepts MAC addresses with the "-" delimiter, so select '"-" delimiter'.
