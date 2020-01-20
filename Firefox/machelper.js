@@ -17,7 +17,7 @@ function onPaste(event) {
     }
 
     if (firstMatch !== null) {
-        chrome.storage.sync.get({
+        browser.storage.sync.get({
             sitePreferences: [],
             paste: paste
         }, function (data) {

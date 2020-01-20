@@ -12,7 +12,7 @@ function addSitePreference(url, type, addToStorage) {
   }
 
   if (addToStorage) {
-    chrome.storage.sync.get({
+    browser.storage.sync.get({
       sitePreferences: []
     }, function (data) {
       var pref = {};
@@ -20,7 +20,7 @@ function addSitePreference(url, type, addToStorage) {
       pref["type"] = type;
       data.sitePreferences.push(pref);
 
-      chrome.storage.sync.set({
+      browser.storage.sync.set({
         sitePreferences: data.sitePreferences
       });
     });
@@ -28,7 +28,7 @@ function addSitePreference(url, type, addToStorage) {
 }
 
 function removeSitePreference(url) {
-  chrome.storage.sync.get({
+  browser.storage.sync.get({
     sitePreferences: []
   }, function (data) {
     for (var i = 0; i < data.sitePreferences.length; i++) {
@@ -38,14 +38,14 @@ function removeSitePreference(url) {
       }
     }
 
-    chrome.storage.sync.set({
+    browser.storage.sync.set({
       sitePreferences: data.sitePreferences
     });
   });
 }
 
 function restoreOptions() {
-  chrome.storage.sync.get({
+  browser.storage.sync.get({
     sitePreferences: []
   }, function (data) {
     var sitePrefs = data.sitePreferences;
@@ -57,7 +57,7 @@ function restoreOptions() {
       addSitePreference(sitePrefs[i]["url"], sitePrefs[i]["type"], false);
     }
 
-    if (sitePrefs.length > 0) {
+    if(sitePrefs.length > 0){
       urlDropdown.selectedIndex = 0;
       document.getElementById("urlMacType").selectedIndex = urlDropdown.options[0].value;
     }
@@ -69,9 +69,9 @@ function addUrl() {
   var type = document.getElementById("urlMacType");
   if (url.value !== "" && type.selectedIndex !== -1) {
     addSitePreference(url.value, type.value, true);
-  } else if (url.value == "") {
+  }else if(url.value == ""){
     alert("URL cannot be empty!");
-  } else {
+  }else{
     alert("Please select MAC type delimiter");
   }
 }
